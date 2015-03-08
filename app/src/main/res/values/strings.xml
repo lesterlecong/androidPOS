@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">PointOfSales</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="company_name">ABC Philippines,Inc.</string>
+    <string name="menu1">Main Course</string>
+    <string name="menu2">Dessert</string>
+    <string name="menu3">Drinks</string>
+    <string name="menu4">Addons</string>
+    <string name="menu5">Appetizer</string>
+    <string name="menu6">Best Seller</string>
+    <string name="menu7">Kiddie Meals</string>
+    <string name="menu8">Burger Selections</string>
+    <string name="menu9">Open Sandwiches</string>
+    <string name="menu10">Salads</string>
+    <string name="menu11">Seafood Galore</string>
+    <string name="menu12">Steak Party</string>
+    <string name="maincoursechoice1">Pork Sisig</string>
+    <string name="maincoursechoice2">Chop Suey</string>
+    <string name="maincoursechoice3">Pancit Malabon</string>
+    <string name="maincoursechoice4">Inato 1</string>
+    <string name="maincoursechoice5">Inato 2</string>
+    <string name="maincoursechoice6">Inato 3</string>
+</resources>
