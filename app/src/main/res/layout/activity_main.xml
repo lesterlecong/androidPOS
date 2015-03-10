@@ -99,42 +99,48 @@
                     style="@style/darkorangebtn"
                     android:layout_width="@dimen/button_size"
                     android:layout_height="@dimen/button_size"
-                    android:text="@string/maincoursechoice1" />
+                    android:text="@string/maincoursechoice1"
+                    android:layout_gravity="center_vertical"/>
 
                 <Button
                     android:id="@+id/maincoursechoice2"
                     style="@style/darkorangebtn"
                     android:layout_width="@dimen/button_size"
                     android:layout_height="@dimen/button_size"
-                    android:text="@string/maincoursechoice2" />
+                    android:text="@string/maincoursechoice2"
+                    android:layout_gravity="center_vertical"/>
 
                 <Button
                     android:id="@+id/maincoursechoice3"
                     style="@style/darkorangebtn"
                     android:layout_width="@dimen/button_size"
                     android:layout_height="@dimen/button_size"
-                    android:text="@string/maincoursechoice3" />
+                    android:text="@string/maincoursechoice3"
+                    android:layout_gravity="center_vertical"/>
 
                 <Button
                     android:id="@+id/maincoursechoice4"
                     style="@style/darkorangebtn"
                     android:layout_width="@dimen/button_size"
                     android:layout_height="@dimen/button_size"
-                    android:text="@string/maincoursechoice4" />
+                    android:text="@string/maincoursechoice4"
+                    android:layout_gravity="center_vertical"/>
 
                 <Button
                     android:id="@+id/maincoursechoice5"
                     style="@style/darkorangebtn"
                     android:layout_width="@dimen/button_size"
                     android:layout_height="@dimen/button_size"
-                    android:text="@string/maincoursechoice5" />
+                    android:text="@string/maincoursechoice5"
+                    android:layout_gravity="center_vertical"/>
 
                 <Button
                     android:id="@+id/maincoursechoice6"
                     style="@style/darkorangebtn"
                     android:layout_width="@dimen/button_size"
                     android:layout_height="@dimen/button_size"
-                    android:text="@string/maincoursechoice6" />
+                    android:text="@string/maincoursechoice6"
+                    android:layout_gravity="center_vertical"/>
 
             </GridLayout>
         </HorizontalScrollView>

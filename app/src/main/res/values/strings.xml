@@ -19,7 +19,7 @@
     <string name="maincoursechoice1">Pork Sisig</string>
     <string name="maincoursechoice2">Chop Suey</string>
     <string name="maincoursechoice3">Pancit Malabon</string>
-    <string name="maincoursechoice4">Inato 1 Long text for test</string>
+    <string name="maincoursechoice4">Inato 1 Long text\n for test if it can\n handle long names</string>
     <string name="maincoursechoice5">Inato 2</string>
     <string name="maincoursechoice6">Inato 3</string>
 </resources>
