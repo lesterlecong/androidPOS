@@ -1,6 +1,7 @@
 package com.project.pointofsale.androidpos;
 
 import android.content.Context;
+import android.graphics.Point;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -50,10 +51,14 @@ public class MainActivity extends ActionBarActivity {
         Display display = wm.getDefaultDisplay();
         DisplayMetrics metrics = new DisplayMetrics();
         display.getMetrics(metrics);
-        int width = metrics.widthPixels;
-        int height = metrics.heightPixels;
+        Point point = new Point();
+        display.getRealSize(point);
 
-        Log.d("SCREEN_SIZES", "Width:"+width+", Height:"+height);
+//        int width = metrics.widthPixels;
+//        int height = metrics.heightPixels;
+//
+//        Log.d("SCREEN_SIZES", "Width:"+width+", Height:"+height);
+        Log.d("SCREEN_SIZES", "X:" + point.x + ",Y:" + point.y);
     }
 
     private void getScreenDPI(){
