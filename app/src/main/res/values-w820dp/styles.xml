@@ -7,7 +7,7 @@
 
     <style name="whiteMono" parent="@android:style/TextAppearance.Large">
         <item name="android:typeface">monospace</item>
-        <item name="android:textSize">40sp</item>
+        <item name="android:textSize">30sp</item>
         <item name="android:textColor">#FFFFFF</item>
     </style>
 
