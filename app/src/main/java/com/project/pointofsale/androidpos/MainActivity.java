@@ -65,6 +65,7 @@ public class MainActivity extends ActionBarActivity {
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
 
+
         float xDpi = dm.xdpi;
         float yDpi = dm.ydpi;
 

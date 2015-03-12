@@ -5,7 +5,7 @@
 
     <LinearLayout
         android:id="@+id/companydetaillayout"
-        android:layout_width="match_parent"
+        android:layout_width="266.67dp"
         android:layout_height="wrap_content"
         android:background="#1d1d1d"
         android:gravity="center_vertical"
