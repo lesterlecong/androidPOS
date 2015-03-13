@@ -6,10 +6,12 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.Display;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.WindowManager;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 
@@ -19,8 +21,12 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        getScreenResolution(this);
-        getScreenDPI();
+
+        float width = convertPxToDp(getWidthScreenResolution());
+        float height = convertPxToDp(getHeightScreenResolution());
+        float companyLayoutHeight = (height * 10)/100;
+        setupCompanyLayoutHeight(companyLayoutHeight);
+        Log.d("SCREEN_SIZES","W:" + width + "dp; H:" + height +"dp" + " CompanyHeight:" + companyLayoutHeight);
     }
 
 
@@ -46,29 +52,38 @@ public class MainActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private static void getScreenResolution(Context context){
-        WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+    private void setupCompanyLayoutHeight(float heightInDp){
+        LinearLayout companyDetailLayout = (LinearLayout) findViewById(R.id.companydetaillayout);
+       int heightInPx=  (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, heightInDp, getResources().getDisplayMetrics());
+        Log.d("LAYOUT_SIZE", "Height in Dp:" + heightInDp + " Height in px:" + heightInPx);
+        companyDetailLayout.getLayoutParams().height = heightInPx;
+    }
+
+    private float getWidthScreenResolution(){
+         return this.getPoint().x;
+    }
+
+    private float getHeightScreenResolution(){
+        return this.getPoint().y;
+    }
+
+    private Point getPoint(){
+        WindowManager wm = (WindowManager) this.getSystemService(Context.WINDOW_SERVICE);
         Display display = wm.getDefaultDisplay();
         DisplayMetrics metrics = new DisplayMetrics();
         display.getMetrics(metrics);
         Point point = new Point();
         display.getRealSize(point);
 
-//        int width = metrics.widthPixels;
-//        int height = metrics.heightPixels;
-//
-//        Log.d("SCREEN_SIZES", "Width:"+width+", Height:"+height);
-        Log.d("SCREEN_SIZES", "X:" + point.x + ",Y:" + point.y);
+        return point;
     }
 
-    private void getScreenDPI(){
+    private float convertPxToDp(float sizeInPx){
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
 
-
-        float xDpi = dm.xdpi;
-        float yDpi = dm.ydpi;
-
-        Log.d("SCREEN_SIZES", "x:"+xDpi+", y:"+yDpi);
+        float sizeRatio = dm.densityDpi/160;
+        float sizeInDp = sizeInPx/sizeRatio;
+        return sizeInDp;
     }
 }
