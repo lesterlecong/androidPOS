@@ -1,0 +1,19 @@
+Note to Remember:
+mdpi 	-	1	- 160dpi
+hdpi 	-	1.5	- 240dpi
+xhdpi	-	2	- 320dpi
+xxhdpi	-	3	- 480dpi
+
+Nexus 10
+	- 800 x 1280: xhdpi
+	- 800/2 = 400dp
+	- 1280/2 = 640dp
+	
+Nexus 5
+	- 1080x 1920: xxhdpi
+	- 1080/3 = 360dp
+	- 1920/3 = 640dp
+Nexus 7
+	- 800x1280: xhdpi
+	- 800/2 = 400dp
+	- 1280/2 = 640dp
