@@ -1,5 +1,6 @@
 package com.project.pointofsale.androidpos;
 
+import android.app.ActionBar;
 import android.content.Context;
 import android.graphics.Point;
 import android.support.v7.app.ActionBarActivity;
@@ -10,7 +11,9 @@ import android.util.TypedValue;
 import android.view.Display;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -25,8 +28,10 @@ public class MainActivity extends ActionBarActivity {
         float width = convertPxToDp(getWidthScreenResolution());
         float height = convertPxToDp(getHeightScreenResolution());
         float companyLayoutHeight = (height * 10)/100;
-        setupCompanyLayoutHeight(companyLayoutHeight);
-        Log.d("SCREEN_SIZES","W:" + width + "dp; H:" + height +"dp" + " CompanyHeight:" + companyLayoutHeight);
+        setupCompanyLayoutHeight(convertDpToPx(companyLayoutHeight));
+
+        int companyLogoSideSize = convertDpToPx((width*10)/100);
+        setupCompanyLogo(companyLogoSideSize);
     }
 
 
@@ -52,18 +57,29 @@ public class MainActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void setupCompanyLayoutHeight(float heightInDp){
+    private void setupCompanyLayoutHeight(int heightInPx){
         LinearLayout companyDetailLayout = (LinearLayout) findViewById(R.id.companydetaillayout);
-       int heightInPx=  (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, heightInDp, getResources().getDisplayMetrics());
-        Log.d("LAYOUT_SIZE", "Height in Dp:" + heightInDp + " Height in px:" + heightInPx);
         companyDetailLayout.getLayoutParams().height = heightInPx;
     }
 
-    private float getWidthScreenResolution(){
+    private void setupCompanyLogo(int sideSize){
+        ImageView companyLogo = (ImageView) findViewById(R.id.companylogo);
+        ViewGroup.LayoutParams companyLayoutParams = companyLogo.getLayoutParams();
+        companyLayoutParams.height = sideSize;
+        companyLayoutParams.width = sideSize;
+
+        ViewGroup.MarginLayoutParams mlp = (ViewGroup.MarginLayoutParams) companyLayoutParams;
+        int margin = convertDpToPx(10);
+        mlp.setMargins(margin, margin, margin, margin);
+        companyLogo.setLayoutParams(mlp);
+
+    }
+
+    private int getWidthScreenResolution(){
          return this.getPoint().x;
     }
 
-    private float getHeightScreenResolution(){
+    private int getHeightScreenResolution(){
         return this.getPoint().y;
     }
 
@@ -78,7 +94,7 @@ public class MainActivity extends ActionBarActivity {
         return point;
     }
 
-    private float convertPxToDp(float sizeInPx){
+    private float convertPxToDp(int sizeInPx){
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
 
@@ -86,4 +102,10 @@ public class MainActivity extends ActionBarActivity {
         float sizeInDp = sizeInPx/sizeRatio;
         return sizeInDp;
     }
+
+
+    private int convertDpToPx(float sizeInDp){
+        return (int)TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, sizeInDp, getResources().getDisplayMetrics());
+    }
+
 }
