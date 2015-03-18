@@ -2,6 +2,7 @@ package com.project.pointofsale.androidpos;
 
 import android.app.ActionBar;
 import android.content.Context;
+import android.content.res.Configuration;
 import android.graphics.Point;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -13,6 +14,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -27,11 +30,21 @@ public class MainActivity extends ActionBarActivity {
 
         float width = convertPxToDp(getWidthScreenResolution());
         float height = convertPxToDp(getHeightScreenResolution());
-        float companyLayoutHeight = (height * 10)/100;
-        setupCompanyLayoutHeight(convertDpToPx(companyLayoutHeight));
 
-        int companyLogoSideSize = convertDpToPx((width*10)/100);
-        setupCompanyLogo(companyLogoSideSize);
+        Log.d("SCREEN_SIZE", "Width:" + width + " Height:" + height);
+        GridLayout gridLayout = (GridLayout)findViewById(R.id.menugridlayout);
+
+        if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+            gridLayout.setColumnCount(3);
+        }
+        else{
+            gridLayout.setColumnCount(2);
+        }
+
+        Button button = (Button) findViewById(R.id.maincoursechoice1);
+        int buttonHeight = button.getLayoutParams().height;
+        Log.d("Button_Height", "Height:"+ convertPxToDp(buttonHeight));
+
     }
 
 
@@ -57,23 +70,6 @@ public class MainActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void setupCompanyLayoutHeight(int heightInPx){
-        LinearLayout companyDetailLayout = (LinearLayout) findViewById(R.id.companydetaillayout);
-        companyDetailLayout.getLayoutParams().height = heightInPx;
-    }
-
-    private void setupCompanyLogo(int sideSize){
-        ImageView companyLogo = (ImageView) findViewById(R.id.companylogo);
-        ViewGroup.LayoutParams companyLayoutParams = companyLogo.getLayoutParams();
-        companyLayoutParams.height = sideSize;
-        companyLayoutParams.width = sideSize;
-
-        ViewGroup.MarginLayoutParams mlp = (ViewGroup.MarginLayoutParams) companyLayoutParams;
-        int margin = convertDpToPx(10);
-        mlp.setMargins(margin, margin, margin, margin);
-        companyLogo.setLayoutParams(mlp);
-
-    }
 
     private int getWidthScreenResolution(){
          return this.getPoint().x;

@@ -15,15 +15,18 @@
             android:id="@+id/companylogo"
             android:layout_width="@dimen/logo_size"
             android:layout_height="@dimen/logo_size"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginLeft="@dimen/companylabelmargin_size"
+            android:layout_marginRight="@dimen/companylabelmargin_size"
+            android:layout_marginTop="@dimen/companylabelmargin_size"
+            android:layout_marginBottom="@dimen/companylabelmargin_size"
             android:src="@drawable/sample_logo" />
 
         <TextView
             style="@style/whiteMono"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/company_name" />
+            android:text="@string/company_name"
+            android:textSize="@dimen/companytext_size"/>
     </LinearLayout>
     <LinearLayout
         android:id="@+id/tabgrouplayout"
@@ -125,6 +128,7 @@
             android:background="#00aba9">
 
             <GridLayout
+                android:id="@+id/menugridlayout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
@@ -137,7 +141,8 @@
                     android:layout_width="@dimen/button_size"
                     android:layout_height="@dimen/button_size"
                     android:text="@string/maincoursechoice1"
-                    android:layout_gravity="center_vertical"/>
+                    android:layout_gravity="center_vertical"
+                    android:textSize="@dimen/menutext_size"/>
 
                 <Button
                     android:id="@+id/maincoursechoice2"
@@ -145,7 +150,8 @@
                     android:layout_width="@dimen/button_size"
                     android:layout_height="@dimen/button_size"
                     android:text="@string/maincoursechoice2"
-                    android:layout_gravity="center_vertical"/>
+                    android:layout_gravity="center_vertical"
+                    android:textSize="@dimen/menutext_size"/>
 
                 <Button
                     android:id="@+id/maincoursechoice3"
@@ -153,7 +159,8 @@
                     android:layout_width="@dimen/button_size"
                     android:layout_height="@dimen/button_size"
                     android:text="@string/maincoursechoice3"
-                    android:layout_gravity="center_vertical"/>
+                    android:layout_gravity="center_vertical"
+                    android:textSize="@dimen/menutext_size"/>
 
                 <Button
                     android:id="@+id/maincoursechoice4"
@@ -161,7 +168,8 @@
                     android:layout_width="@dimen/button_size"
                     android:layout_height="@dimen/button_size"
                     android:text="@string/maincoursechoice4"
-                    android:layout_gravity="center_vertical"/>
+                    android:layout_gravity="center_vertical"
+                    android:textSize="@dimen/menutext_size"/>
 
                 <Button
                     android:id="@+id/maincoursechoice5"
@@ -169,7 +177,8 @@
                     android:layout_width="@dimen/button_size"
                     android:layout_height="@dimen/button_size"
                     android:text="@string/maincoursechoice5"
-                    android:layout_gravity="center_vertical"/>
+                    android:layout_gravity="center_vertical"
+                    android:textSize="@dimen/menutext_size"/>
 
                 <Button
                     android:id="@+id/maincoursechoice6"
@@ -177,7 +186,8 @@
                     android:layout_width="@dimen/button_size"
                     android:layout_height="@dimen/button_size"
                     android:text="@string/maincoursechoice6"
-                    android:layout_gravity="center_vertical"/>
+                    android:layout_gravity="center_vertical"
+                    android:textSize="@dimen/menutext_size"/>
 
             </GridLayout>
         </ScrollView>

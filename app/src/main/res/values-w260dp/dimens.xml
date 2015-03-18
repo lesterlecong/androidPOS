@@ -1,0 +1,10 @@
+<resources>
+    <!-- Example customization of dimensions originally defined in res/values/dimens.xml
+         (such as screen margins) for screens with more than 320dp of available width. -->
+    <dimen name="activity_horizontal_margin">64dp</dimen>
+    <dimen name="logo_size">25dp</dimen>
+    <dimen name="button_size">134dp</dimen>
+    <dimen name="companylabelmargin_size">5dp</dimen>
+    <dimen name="companytext_size">12sp</dimen>
+    <dimen name="menutext_size">8sp</dimen>
+</resources>
